@@ -1,0 +1,10 @@
+{
+  "description": "Showcases personalized 3D printed gifts focused on family, kids, faith, and special moments with an elegant, warm, and emotional design experience.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}

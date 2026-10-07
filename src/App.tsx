@@ -684,8 +684,10 @@ export default function App() {
                       </button>
                     </div>
                     <p className="product-category">{product.category}</p>
-                    <h3>{product.name}</h3>
-                    <p className="product-price">{product.price != null ? formatPrice(product.price) : "Preço sob consulta"}</p>
+                    <div className="product-title-price">
+                      <h3>{product.name}</h3>
+                      <p className="product-price">{product.price != null ? formatPrice(product.price) : "Preço sob consulta"}</p>
+                    </div>
                     {product.description && (
                       <p className="product-description">
                         {product.description}

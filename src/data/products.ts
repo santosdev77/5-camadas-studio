@@ -27,4 +27,7 @@ export const products: Product[] = [
   { id: 11, name: "Castelo em miniatura", category: "Personalizados", image: photo("photo-1728724569841-05305ee197df"), description: "Torres e texturas em uma maquete cheia de detalhes.", price: 149.9, featured: false, contain: true },
   { id: 12, name: "Ideias que funcionam", category: "Utilitários", image: photo("photo-1740625940423-a59a65c753c0"), description: "Protótipos e peças funcionais para uma solução sob medida.", price: 129.9, featured: false, contain: true },
   { id: 13, name: "Mini halteres decorativos", category: "Academia", image: photo("photo-1534438327276-14e5300c3a48"), description: "Lembranças e brindes criativos para academias e profissionais.", price: 99.9, featured: false },
+  { id: 14, name: "Porta Lápis Coroinhas", category: "Fé", image: "/images/products/coroinhas.jpg", description: "Lembranças delicadas para momentos de fé", price: 39.99, featured: false },
+  
+
 ]

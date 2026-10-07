@@ -4,7 +4,7 @@ export type Product = {
   category: string
   image: string
   description: string
-  price?: string
+  price?: number
   featured: boolean
   contain?: boolean
 }

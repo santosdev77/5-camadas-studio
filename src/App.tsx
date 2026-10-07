@@ -1,12 +1,19 @@
 import { useEffect, useRef, useState } from "react"
 import { products } from "./data/products"
-import { generateWhatsAppLink, INSTAGRAM_URL } from "./lib/contact"
+import type { Product } from "./data/products"
+import { generateWhatsAppLink, INSTAGRAM_URL, formatPrice } from "./lib/contact"
 
 const brandContact = { whatsapp: "", email: "", location: "" }
-const defaultMessage =
-  "Olá! Conheci a 5 Camadas 3D pelo site e gostaria de solicitar um orçamento."
+const defaultMessage = "Ol\u00e1! Vim pelo site da 5 Camadas Studio 3D e gostaria de solicitar um or\u00e7amento.\n\nGostaria de saber mais informa\u00e7\u00f5es sobre os produtos e personalizados dispon\u00edveis."
 const photo = (id: string, width = 900) =>
   `https://images.unsplash.com/${id}?auto=format&fit=crop&w=${width}&q=85`
+
+function productWhatsAppMessage(product: Product) {
+  const intro = `Olá! Vim pelo site da 5 Camadas Studio 3D e tenho interesse neste produto:\n\nProduto: ${product.name}`
+  return product.price != null
+    ? `${intro}\nValor: ${formatPrice(product.price)}\n\nGostaria de saber mais informações e disponibilidade.`
+    : `${intro}\n\nGostaria de saber o valor e mais informações.`
+}
 // Real photographs of 3D-printed pieces; references, not the brand's own portfolio.
 const images = {
   vases: photo("photo-1703221561813-cdaa308cf9e7"),
@@ -669,7 +676,7 @@ export default function App() {
                         aria-label={`Solicitar informações sobre ${product.name}`}
                         onClick={() =>
                           contact(
-                            `Olá! Vi o produto ${product.name} no site da 5 Camadas 3D e gostaria de saber mais.`,
+                            productWhatsAppMessage(product),
                           )
                         }
                       >
@@ -678,6 +685,7 @@ export default function App() {
                     </div>
                     <p className="product-category">{product.category}</p>
                     <h3>{product.name}</h3>
+                    <p className="product-price">{product.price != null ? formatPrice(product.price) : "Preço sob consulta"}</p>
                     {product.description && (
                       <p className="product-description">
                         {product.description}
@@ -687,11 +695,11 @@ export default function App() {
                       className="product-cta"
                       onClick={() =>
                         contact(
-                          `Olá! Vi o produto ${product.name} no site da 5 Camadas 3D e gostaria de saber mais.`,
+                          productWhatsAppMessage(product),
                         )
                       }
                     >
-                      Quero este <Icon name="arrow" />
+                      Solicitar pelo WhatsApp <Icon name="arrow" />
                     </button>
                   </article>
                 ))}
@@ -754,7 +762,7 @@ export default function App() {
               {contactButton(
                 "Enviar minha ideia",
                 false,
-                "Olá! Tenho uma ideia e gostaria de criar uma peça personalizada com a 5 Camadas 3D.",
+                "Olá! Vim pelo site da 5 Camadas Studio 3D e gostaria de saber mais sobre produtos personalizados.\n\nGostaria de solicitar um orçamento.",
               )}
               <span className="handwritten custom-note">
                 Sua imaginação é o ponto de partida.
@@ -1051,7 +1059,7 @@ export default function App() {
               </button>
               <a
                 className="button button-primary"
-                href={`https://wa.me/?text=${encodeURIComponent(message)}`}
+                href={generateWhatsAppLink(message)}
                 target="_blank"
                 rel="noopener noreferrer"
               >

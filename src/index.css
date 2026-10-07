@@ -160,6 +160,7 @@ h1 em { color: var(--color-rose); font-weight: 400; white-space: nowrap; }
 .product-heart .icon { width: 15px; }
 .product-category { margin-top: 18px; font-size: 8px; letter-spacing: 1.7px; text-transform: uppercase; color: #b18076; }
 .product-card h3 { font-size: 23px; margin-top: 6px; }
+.product-price { margin-top: 8px; color: var(--color-rose); font-size: 16px; font-weight: 600; }
 .product-cta { display: flex; align-items: center; gap: 15px; margin-top: 12px; padding: 0 0 7px; border: 0; border-bottom: 1px solid #d3b7a5; background: none; font-size: 9px; color: #a27c66; }
 .product-cta .icon { width: 14px; height: 14px; transition: transform .2s; }
 .product-cta:hover .icon { transform: translateX(4px); }

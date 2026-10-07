@@ -16,7 +16,7 @@ const photo = (id: string) =>
 export const products: Product[] = [
   { id: 1, name: "Coelhinhos para celebrar em família", category: "Família", image: photo("photo-1744974573252-b437cc3e3507"), description: "Peças decorativas para guardar momentos especiais.", price: 49.9, featured: true },
   { id: 2, name: "Ursinho cheio de carinho", category: "Kids", image: photo("photo-1782383872645-85cd669841c8"), description: "Um companheiro especial, impresso em 3D.", price: 59.9, featured: true },
-  { id: 3, name: "Tartaruguinha articulada", category: "Kids", image: photo("photo-1779792495496-a26f748f57b0"), description: "Personagem colorido com partes articuladas.", price: 39.9, featured: true, contain: true },
+  { id: 3, name: "Tartaruguinha articulada 30,99", category: "Kids", image: photo("photo-1779792495496-a26f748f57b0"), description: "Personagem colorido com partes articuladas.", price: 39.9, featured: true, contain: true },
   { id: 4, name: "Coelhinho para presentear", category: "Presentes", image: photo("photo-1744974573355-57a51c6db813"), description: "Um presente personalizável feito com cuidado.", price: 45, featured: true },
   { id: 5, name: "Vasos com personalidade", category: "Utilitários", image: photo("photo-1703221561813-cdaa308cf9e7"), description: "Design autoral para dar vida aos seus espaços.", price: 79.9, featured: true },
   { id: 6, name: "Pequeno mundo de aventuras", category: "Kids", image: photo("photo-1747228984031-7f1ae2c4befa"), description: "Cores e formas para imaginar novas histórias.", price: 69.9, featured: true },
